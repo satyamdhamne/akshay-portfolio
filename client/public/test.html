@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Instagram Link Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #121212;
+      color: white;
+    }
+    h1 {
+      color: #4CBB17;
+    }
+    button {
+      background: transparent;
+      border: 1px solid #F16767;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 0;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      background-color: #F16767;
+    }
+    .link-text {
+      word-break: break-all;
+      margin-top: 5px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <h1>Instagram Link Test</h1>
+  <p>Testing different ways to open Instagram links:</p>
+  
+  <div>
+    <h3>Test 1: Regular window.open()</h3>
+    <button onclick="window.open('https://www.instagram.com/reel/C_ldi-do_3k/?igsh=MXdmYnNzd3pvd3c0Ng==', '_blank')">
+      Open Instagram Link 1
+    </button>
+    <div class="link-text">https://www.instagram.com/reel/C_ldi-do_3k/?igsh=MXdmYnNzd3pvd3c0Ng==</div>
+  </div>
+
+  <div>
+    <h3>Test 2: window.location.href</h3>
+    <button onclick="window.location.href = 'https://www.instagram.com/reel/DB_LhT4y1-v/?igsh=c3Nic3hpYzYzd3Ro'">
+      Open Instagram Link 2
+    </button>
+    <div class="link-text">https://www.instagram.com/reel/DB_LhT4y1-v/?igsh=c3Nic3hpYzYzd3Ro</div>
+  </div>
+
+  <div>
+    <h3>Test 3: Regular anchor tag</h3>
+    <a href="https://www.instagram.com/reel/ChSEFxFgx2N/?igsh=MWlzM2xnYnVjZTM3cw==" target="_blank" 
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; 
+             background: transparent; border: 1px solid #F16767; color: white; 
+             padding: 10px 20px; margin: 10px 0; border-radius: 20px; cursor: pointer;">
+      <span>Open Instagram Link 3</span>
+    </a>
+    <div class="link-text">https://www.instagram.com/reel/ChSEFxFgx2N/?igsh=MWlzM2xnYnVjZTM3cw==</div>
+  </div>
+
+  <div>
+    <h3>Test 4: Using onclick on anchor</h3>
+    <a href="#" 
+      onclick="window.open('https://www.instagram.com/reel/Ch6LXeKpbnQ/?igsh=d3JvNTNrM25vcTNo', '_blank'); return false;" 
+      style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; 
+             background: transparent; border: 1px solid #F16767; color: white; 
+             padding: 10px 20px; margin: 10px 0; border-radius: 20px; cursor: pointer;">
+      <span>Open Instagram Link 4</span>
+    </a>
+    <div class="link-text">https://www.instagram.com/reel/Ch6LXeKpbnQ/?igsh=d3JvNTNrM25vcTNo</div>
+  </div>
+
+  <script>
+    console.log('Test page loaded');
+  </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@700,600,500&f[]=supreme@700,400&display=swap');
+
+.font-clash {
+  font-family: 'ClashDisplay', sans-serif;
+}
+
+.font-supreme {
+  font-family: 'Supreme', sans-serif;
+}

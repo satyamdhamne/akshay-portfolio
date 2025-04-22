@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 100%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 326 100% 61%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 265 42% 42%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+    
+    --accent: 152 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 326 100% 61%;
+    
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 326 100% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 326 100% 61%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'Supreme', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'ClashDisplay', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#FF3CAC] to-[#784BA0] bg-clip-text text-transparent;
+  }
+  
+  .secondary-gradient-text {
+    @apply bg-gradient-to-r from-[#2B86C5] to-[#784BA0] bg-clip-text text-transparent;
+  }
+  
+  .primary-gradient {
+    @apply bg-gradient-to-r from-[#FF3CAC] to-[#784BA0];
+  }
+  
+  .secondary-gradient {
+    @apply bg-gradient-to-r from-[#2B86C5] to-[#784BA0];
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+  
+  .hover-scale:hover {
+    @apply transform scale-105;
+  }
+  
+  /* Portfolio button hover effects */
+  .portfolio-button {
+    @apply bg-transparent border transition-all duration-200;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .portfolio-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 9999px;
+  }
+  
+  .portfolio-button.blue::before {
+    background-color: rgb(37, 99, 235); /* blue-600 */
+  }
+  
+  .portfolio-button.pink::before {
+    background-color: rgb(219, 39, 119); /* pink-600 */
+  }
+  
+  .portfolio-button:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .portfolio-button.blue:hover {
+    @apply border-blue-500;
+  }
+  
+  .portfolio-button.pink:hover {
+    @apply border-pink-500;
+  }
+  
+  /* View Ad Button hover effect */
+  .view-ad-button:hover {
+    background-color: #F16767 !important;
+    color: white !important;
+    border-color: #F16767 !important;
+    opacity: 1 !important;
+  }
+  
+  .section-transition {
+    @apply opacity-0 transform translate-y-5 transition-all duration-500;
+  }
+  
+  .section-visible {
+    @apply opacity-100 transform translate-y-0;
+  }
+  
+  /* Card styles moved to inline Tailwind in the component */
+  
+  @keyframes gradient-shift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .bg-size-200 {
+    background-size: 200% 200%;
+  }
+  
+  .animate-gradient-x {
+    animation: gradient-x 5s ease infinite;
+  }
+  
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  @keyframes border-rotate {
+    from {
+      --border-angle: 0turn;
+    }
+    to {
+      --border-angle: 1turn;
+    }
+  }
+}
